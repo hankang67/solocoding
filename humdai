@@ -1,0 +1,30 @@
+import java.io.*;
+import java.util.*;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // 첫 번째 줄에서 n을 입력받음
+        int n = scanner.nextInt();
+
+        // 두 번째 줄에서 n개의 비옥함 값을 입력받음
+        int[] F = new int[n];
+        for (int i = 0; i < n; i++) {
+            F[i] = scanner.nextInt();
+        }
+
+        // 배열을 정렬
+        Arrays.sort(F);
+
+        // 최대 곱을 구함 (두 개의 최대값과 두 개의 최소값을 비교)
+        int maxProduct = Math.max(F[0] * F[1], F[n-1] * F[n-2]);
+
+        // 결과 출력
+        System.out.println(maxProduct);
+
+        scanner.close();
+        
+    }
+}
